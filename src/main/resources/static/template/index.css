@@ -1,0 +1,29 @@
+body {
+    width: 100%;
+    background-color: aquamarine;
+}
+#addId {
+    height: 60px;
+    width: 200px;
+}
+
+#submit {
+    height: 60px;
+    width: 70px;
+}
+
+#text {
+    width: 100%;
+    font-size: 44px;
+}
+
+p {
+    display: flex;
+    justify-content: center;
+}
+
+#warp {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

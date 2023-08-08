@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waibaoservice.mapper.GasMapper">
+
+    <insert id="addTimer">
+        insert into tb_gas_stove(
+            device_id,
+            openid,
+            end_time,
+            status
+        ) values (
+            #{device_id},
+            #{openid},
+            #{end_time},
+            1
+        )
+    </insert>
+    <update id="updateTimer">
+        update tb_gas_stove set end_time = #{end_time} where device_id = #{device_id}
+    </update>
+    <delete id="removeTimer">
+        delete from tb_gas_stove where device_id = #{device_id}
+    </delete>
+    <select id="selectGasStoveById" resultType="com.waibaoservice.pojo.GasStove">
+        select * from tb_gas_stove where device_id = #{device_id}
+    </select>
+
+    <select id="selectEndTimeById" resultType="com.waibaoservice.pojo.GasStove">
+        select end_time from tb_gas_stove where device_id = #{device_id}
+    </select>
+    <select id="selectAll" resultType="com.waibaoservice.pojo.GasStove">
+        select * from tb_gas_stove
+    </select>
+</mapper>

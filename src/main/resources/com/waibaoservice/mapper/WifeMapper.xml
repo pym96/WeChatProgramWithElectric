@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waibaoservice.mapper.WifeMapper">
+
+    <insert id="addWife">
+        insert into wife (
+            deviceId,
+            account,
+            psd
+        ) values (
+            #{deviceId},
+            #{account},
+            #{psd}
+       )
+    </insert>
+
+    <update id="modifyWife">
+        update wife set account = #{account}, psd = #{psd} where deviceId = #{deviceId}
+    </update>
+
+    <select id="selectWifeById" resultType="com.waibaoservice.pojo.Wife">
+        select *
+        from wife where deviceId = #{deviceId};
+    </select>
+</mapper>

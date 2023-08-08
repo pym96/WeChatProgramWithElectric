@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.waibaoservice.mapper.UserMapper">
+
+    <insert id="insertUserInfo">
+        insert into tb_user_info (
+            openid,
+            session_key,
+            unionid
+        ) values (
+            #{openid},
+            #{session_key},
+            #{unionid}
+        )
+    </insert>
+    <select id="selectUserByOpenId" resultType="com.waibaoservice.pojo.User">
+        select openid from tb_user_info where openid = #{openid}
+    </select>
+
+</mapper>
